@@ -1,3 +1,4 @@
+Project #3 of my OSU coding bootcamp, in this project I created certain options for a generate passowrd website to help create a password that fits certain criteria for the user.
 # Password Generator Starter Code
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
