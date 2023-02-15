@@ -9,7 +9,7 @@ let lowercaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'
 let specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', '~', ')', '_', '-', '=', '+', '[', ']', '{', '}', ':', ';', '"', ',', '<', '.', '>', '/', '?']
 let numericCharacters = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 let finalArray = []
-
+let passwordArray = []
 function generatePassword() {
   let passwordLength = prompt("What is the length of your password?");
   if (passwordLength < 8 || passwordLength > 128) {
@@ -19,25 +19,30 @@ function generatePassword() {
 // options coding
     let confirmLowercase = confirm("Does your passoword include lowercase values?");
     if (confirmLowercase === true) {
-      finalArray = finalarray.concat(lowercaseCharacters)
+      finalArray = finalArray.concat(lowercaseCharacters)
     }
     let confirmUppercase = confirm("Does your passoword include uppercase values?");
     if (confirmUppercase === true) {
-      finalArray = finalarray.concat(uppercaseCharacters)
+      finalArray = finalArray.concat(uppercaseCharacters)
     }
     let confirmNumeric = confirm("Does your passoword include numeric values?");
     if (confirmNumeric === true) {
-      finalArray = finalarray.concat(numericCharacters)
+      finalArray = finalArray.concat(numericCharacters)
     }
     let confirmSpecial = confirm("Does your passoword include special character values?");
     if (confirmSpecial === true) {
-      finalArray = finalarray.concat(specialCharacters)
+      finalArray = finalArray.concat(specialCharacters)
     }
 
     if (!(confirmLowercase || confirmUppercase || confirmNumeric || confirmSpecial)) {
       alert("Choose at least one option")
       generatePassword()
     }
+    // generated random values from finalArray
+    for (let i = 0; i<passwordLength; i++){
+passwordArray[i] = finalArray[Math.floor(Math.random()*finalArray.length)]
+    }
+    return passwordArray.join("")
   }
   
   // Write password to the #password input
